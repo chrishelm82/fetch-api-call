@@ -1,2 +1,2 @@
-# JavaScript fetch API call grabbing random data from random users
+# JavaScript Fetch API User Directory
 Fetch API call

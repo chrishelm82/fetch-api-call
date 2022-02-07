@@ -8,10 +8,10 @@ function getData () {
   fetch('https://randomuser.me/api/?results=10')
     .then(res => res.json())
     .then(data => {
-      // console.log(data);
+      console.log(data);
 
       let author = data.results;
-      // console.log(author);
+      console.log(author);
 
       //Get Data Value
       let output = "<h2><center>Get User Data</center></h2>";
