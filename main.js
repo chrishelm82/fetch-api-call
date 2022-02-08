@@ -2,7 +2,7 @@
 document.getElementById('myBtn').addEventListener('click', getData);
 
 function getData () {
-  // console.log('test');
+  console.log('test');
 
   //Get API
   fetch('https://randomuser.me/api/?results=10')

@@ -1,0 +1,5 @@
+.mainContainer {
+  background-image: url('/images/blue-sky.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
