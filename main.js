@@ -1,8 +1,7 @@
 //Get Btn And Create Function
-document.getElementById('myBtn').addEventListener('click', getData);
+document.getElementById('myBtn').addEventListener('click', getData, main );
 
 function getData () {
-  console.log('test');
 
   //Get API
   fetch('https://randomuser.me/api/?results=10')
@@ -40,3 +39,28 @@ function getData () {
 
     });
 };
+
+const { promises: fs } = require('fs')
+
+const createCsWriter = require('csv-writer').createObjectCsvWriter
+
+const csWriter = createCsWriter({
+  path: './download.csv',
+  headerIdDelimiter: '.',
+  header: ['name', 'email', 'phone_number', 'age'].map((item) => ({ id: item, title: item.replace('.', '_') }))
+})
+
+async function main () {
+  const file_data = await fs.readFile('download.json')
+  const parsed_data = JSON.parse(file_data)
+
+
+  try {
+    await csWriter.writeRecords(parsed_data.download.csv)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+main()
